@@ -197,7 +197,7 @@ function initializeContactForm() {
         });
 
         if (!isValid) {
-            showFormMessage('Mohon lengkapi semua field yang diperlukan dengan benar!', 'error');
+            showFormMessage(getTranslation('form-validation-error'), 'error');
             shakeForm();
             return;
         }
@@ -210,12 +210,12 @@ function initializeContactForm() {
             await simulateFormSubmission({ name, email, message, phone });
 
             // Success state
-            showFormMessage('🎉 Pesan berhasil dikirim! Terima kasih, saya akan merespon sesegera mungkin.', 'success');
+            showFormMessage(getTranslation('form-success-message'), 'success');
             contactForm.reset();
             clearValidationStates();
 
         } catch (error) {
-            showFormMessage('❌ Terjadi kesalahan. Silakan coba lagi atau hubungi langsung melalui WhatsApp.', 'error');
+            showFormMessage(getTranslation('form-error-message'), 'error');
         } finally {
             setSubmitLoading(false);
         }
@@ -233,7 +233,7 @@ function validateField(field) {
     // Required field validation
     if (isRequired && !value) {
         isValid = false;
-        errorMessage = 'Field ini wajib diisi';
+        errorMessage = getTranslation('field-required');
     }
 
     // Email validation
@@ -241,7 +241,7 @@ function validateField(field) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(value)) {
             isValid = false;
-            errorMessage = 'Format email tidak valid';
+            errorMessage = getTranslation('email-invalid');
         }
     }
 
@@ -250,14 +250,14 @@ function validateField(field) {
         const phoneRegex = /^(\+62|62|0)[0-9]{9,13}$/;
         if (!phoneRegex.test(value.replace(/\s/g, ''))) {
             isValid = false;
-            errorMessage = 'Format nomor HP tidak valid';
+            errorMessage = getTranslation('phone-invalid');
         }
     }
 
     // Message length validation
     else if (field.name === 'message' && value && value.length < 10) {
         isValid = false;
-        errorMessage = 'Pesan minimal 10 karakter';
+        errorMessage = getTranslation('message-too-short');
     }
 
     // Update field appearance
@@ -309,22 +309,27 @@ function updateFieldValidation(field, isValid, errorMessage = '') {
 
 function setSubmitLoading(loading) {
     const submitButton = document.querySelector('.contact-submit');
-    const submitText = submitButton.querySelector('.submit-text') ||
-        submitButton.querySelector('i').nextSibling;
+    const submitText = submitButton.querySelector('.submit-text');
 
     if (loading) {
         submitButton.classList.add('loading');
         submitButton.disabled = true;
         if (submitText) {
-            submitText.textContent = ' Mengirim Pesan...';
+            submitText.textContent = getTranslation('form-sending');
         }
     } else {
         submitButton.classList.remove('loading');
         submitButton.disabled = false;
         if (submitText) {
-            submitText.textContent = ' Kirim Pesan';
+            submitText.textContent = getTranslation('form-submit');
         }
     }
+}
+
+// Helper function to get translations
+function getTranslation(key) {
+    const currentLang = window.languageManager ? window.languageManager.getCurrentLanguage() : 'id';
+    return languages[currentLang] && languages[currentLang][key] ? languages[currentLang][key] : key;
 }
 
 function showFormMessage(text, type) {

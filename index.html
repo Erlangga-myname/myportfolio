@@ -35,21 +35,35 @@
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#home" class="nav-link"
+                        data-key="nav-home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about" class="nav-link"
+                        data-key="nav-about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#skills" class="nav-link"
+                        data-key="nav-skills">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#projects" class="nav-link"
+                        data-key="nav-projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#contact" class="nav-link"
+                        data-key="nav-contact">Contact</a>
                 </li>
             </ul>
+
+            <!-- Language Toggle Button -->
+            <div class="language-toggle">
+                <button id="languageToggle" class="lang-btn">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text" data-key="language-toggle">EN</span>
+                </button>
+            </div>
+
             <div class="hamburger" id="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -64,12 +78,14 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        <span class="typing-text">Halo, Saya</span>
+                        <span class="typing-text" data-key="hero-greeting">Halo,
+                            Saya</span>
                         <span class="name-highlight">Erlangga Satria
                             Cakrabirawa</span>
                     </h1>
-                    <p class="hero-subtitle">Flutter Mobile Developer</p>
-                    <p class="hero-description">
+                    <p class="hero-subtitle" data-key="hero-role">Flutter Mobile
+                        Developer</p>
+                    <p class="hero-description" data-key="hero-description">
                         Seorang pelajar SMK Negeri 12 Malang yang passionate
                         dalam pengembangan
                         aplikasi mobile dengan Flutter. Saya fokus pada frontend
@@ -80,11 +96,12 @@
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">
                             <i class="fas fa-code"></i>
-                            Lihat Projects
+                            <span data-key="btn-view-projects">Lihat
+                                Projects</span>
                         </a>
                         <a href="#contact" class="btn btn-secondary">
                             <i class="fas fa-envelope"></i>
-                            Hubungi Saya
+                            <span data-key="btn-contact">Hubungi Saya</span>
                         </a>
                     </div>
                 </div>
@@ -100,8 +117,10 @@
     <section id="about" class="about section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Tentang Saya</h2>
-                <p class="section-subtitle">Kenali lebih dekat tentang passion
+                <h2 class="section-title" data-key="about-title">Tentang Saya
+                </h2>
+                <p class="section-subtitle" data-key="about-subtitle">Kenali
+                    lebih dekat tentang passion
                     dan dedikasi saya dalam pengembangan aplikasi mobile</p>
             </div>
             <div class="about-content">
@@ -109,14 +128,14 @@
                     <img src="assets/presentasi.jpeg" alt="About Erlangga">
                 </div>
                 <div class="about-text">
-                    <h3>Flutter Mobile Developer</h3>
-                    <p>
+                    <h3 data-key="about-role">Flutter Mobile Developer</h3>
+                    <p data-key="about-description-1">
                         Halo! Saya Erlangga Satria Cakrabirawa, seorang pelajar
                         SMK Negeri 12 Malang jurusan PPLG yang memiliki passion
                         besar di dunia pengembangan aplikasi mobile berbasis
                         Flutter, terutama di sisi frontend.
                     </p>
-                    <p>
+                    <p data-key="about-description-2">
                         Saya terbiasa bekerja cepat, efisien, dan rapi—dengan
                         kemampuan menyelesaikan satu aplikasi frontend hanya
                         dalam waktu 2 hari: Hari pertama untuk perancangan
@@ -126,15 +145,17 @@
                     <div class="about-stats">
                         <div class="stat-item">
                             <h4>4+</h4>
-                            <p>Mobile Apps</p>
+                            <p data-key="stat-apps">Mobile Apps</p>
                         </div>
                         <div class="stat-item">
                             <h4>2</h4>
-                            <p>Tahun Pengalaman Coding</p>
+                            <p data-key="stat-coding-years">Tahun Pengalaman
+                                Coding</p>
                         </div>
                         <div class="stat-item">
                             <h4>1</h4>
-                            <p>Tahun Pengalaman Kerja</p>
+                            <p data-key="stat-work-years">Tahun Pengalaman Kerja
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -146,8 +167,10 @@
     <section id="skills" class="skills section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Keahlian Saya</h2>
-                <p class="section-subtitle">Teknologi dan tools yang saya kuasai
+                <h2 class="section-title" data-key="skills-title">Keahlian Saya
+                </h2>
+                <p class="section-subtitle" data-key="skills-subtitle">Teknologi
+                    dan tools yang saya kuasai
                 </p>
             </div>
             <div class="skills-grid">
@@ -247,8 +270,10 @@
     <section id="projects" class="projects section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Project Saya</h2>
-                <p class="section-subtitle">Kumpulan aplikasi mobile yang telah
+                <h2 class="section-title" data-key="projects-title">Project Saya
+                </h2>
+                <p class="section-subtitle" data-key="projects-subtitle">
+                    Kumpulan aplikasi mobile yang telah
                     saya kembangkan</p>
             </div>
 
@@ -256,9 +281,10 @@
             <div class="project-category">
                 <h3 class="category-title">
                     <i class="fas fa-users"></i>
-                    Team Projects
+                    <span data-key="team-projects-title">Team Projects</span>
                 </h3>
-                <p class="category-subtitle">Proyek yang dikembangkan bersama
+                <p class="category-subtitle" data-key="team-projects-subtitle">
+                    Proyek yang dikembangkan bersama
                     tim</p>
                 <div class="projects-grid">
                     <div class="project-card">
@@ -267,8 +293,11 @@
                                 alt="Alhamrah Mobile">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Alhamrah Mobile</h3>
-                            <p class="project-description">
+                            <h3 class="project-title"
+                                data-key="project-alhamrah-title">Alhamrah
+                                Mobile</h3>
+                            <p class="project-description"
+                                data-key="project-alhamrah-desc">
                                 Aplikasi mobile untuk Alhamrah dengan fitur
                                 lengkap dan interface yang user-friendly.
                                 Dikembangkan bersama tim untuk memberikan solusi
@@ -282,14 +311,15 @@
                             <div class="project-meta">
                                 <span class="project-type team">
                                     <i class="fas fa-users"></i>
-                                    Team Project
+                                    <span data-key="project-type-team">Team
+                                        Project</span>
                                 </span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/Erlanggadn/ALHAMRAH-MOBILE"
                                     class="btn btn-primary" target="_blank">
                                     <i class="fab fa-github"></i>
-                                    GitHub
+                                    <span data-key="btn-github">GitHub</span>
                                 </a>
                             </div>
                         </div>
@@ -300,8 +330,10 @@
                             <img src="assets/RM_Mobile.png" alt="RS Mobile">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">RS Mobile</h3>
-                            <p class="project-description">
+                            <h3 class="project-title"
+                                data-key="project-rs-title">RS Mobile</h3>
+                            <p class="project-description"
+                                data-key="project-rs-desc">
                                 Aplikasi rumah sakit mobile dengan sistem
                                 manajemen pasien dan dokter yang terintegrasi.
                                 Proyek kolaborasi untuk digitalisasi layanan
@@ -315,14 +347,15 @@
                             <div class="project-meta">
                                 <span class="project-type team">
                                     <i class="fas fa-users"></i>
-                                    Team Project
+                                    <span data-key="project-type-team">Team
+                                        Project</span>
                                 </span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/Erlanggadn/RS-MOBILE"
                                     class="btn btn-primary" target="_blank">
                                     <i class="fab fa-github"></i>
-                                    GitHub
+                                    <span data-key="btn-github">GitHub</span>
                                 </a>
                             </div>
                         </div>
@@ -334,8 +367,11 @@
                                 alt="Klinik Mobile">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Klinik Mobile</h3>
-                            <p class="project-description">
+                            <h3 class="project-title"
+                                data-key="project-klinik-title">Klinik Mobile
+                            </h3>
+                            <p class="project-description"
+                                data-key="project-klinik-desc">
                                 Aplikasi klinik mobile dengan sistem antrian
                                 digital dan manajemen rekam medis. Dikembangkan
                                 bersama tim untuk meningkatkan efisiensi
@@ -349,14 +385,15 @@
                             <div class="project-meta">
                                 <span class="project-type team">
                                     <i class="fas fa-users"></i>
-                                    Team Project
+                                    <span data-key="project-type-team">Team
+                                        Project</span>
                                 </span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/Erlanggadn/KLINIK-MOBILE"
                                     class="btn btn-primary" target="_blank">
                                     <i class="fab fa-github"></i>
-                                    GitHub
+                                    <span data-key="btn-github">GitHub</span>
                                 </a>
                             </div>
                         </div>
@@ -368,9 +405,12 @@
             <div class="project-category">
                 <h3 class="category-title">
                     <i class="fas fa-user"></i>
-                    Personal Projects
+                    <span data-key="personal-projects-title">Personal
+                        Projects</span>
                 </h3>
-                <p class="category-subtitle">Proyek yang dikembangkan secara
+                <p class="category-subtitle"
+                    data-key="personal-projects-subtitle">Proyek yang
+                    dikembangkan secara
                     mandiri</p>
                 <div class="projects-grid">
                     <div class="project-card">
@@ -378,8 +418,11 @@
                             <img src="assets/lintaskita.png" alt="LintasKita">
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">LintasKita</h3>
-                            <p class="project-description">
+                            <h3 class="project-title"
+                                data-key="project-lintaskita-title">LintasKita
+                            </h3>
+                            <p class="project-description"
+                                data-key="project-lintaskita-desc">
                                 Platform sosial media untuk berbagi informasi
                                 dan berinteraksi dengan komunitas. Proyek
                                 personal yang menggabungkan passion saya dalam
@@ -394,14 +437,16 @@
                             <div class="project-meta">
                                 <span class="project-type personal">
                                     <i class="fas fa-user"></i>
-                                    Personal Project
+                                    <span
+                                        data-key="project-type-personal">Personal
+                                        Project</span>
                                 </span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/Erlanggadn/LINTASKITA"
                                     class="btn btn-primary" target="_blank">
                                     <i class="fab fa-github"></i>
-                                    GitHub
+                                    <span data-key="btn-github">GitHub</span>
                                 </a>
                             </div>
                         </div>
@@ -415,14 +460,17 @@
     <section id="contact" class="contact section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Hubungi Saya</h2>
-                <p class="section-subtitle">Mari berdiskusi tentang project Anda
+                <h2 class="section-title" data-key="contact-title">Hubungi Saya
+                </h2>
+                <p class="section-subtitle" data-key="contact-subtitle">Mari
+                    berdiskusi tentang project Anda
                 </p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Mari Berkolaborasi!</h3>
-                    <p>Saya terbuka untuk diskusi tentang project mobile
+                    <h3 data-key="contact-collaborate">Mari Berkolaborasi!</h3>
+                    <p data-key="contact-description">Saya terbuka untuk diskusi
+                        tentang project mobile
                         development. Jangan ragu untuk menghubungi saya!</p>
 
                     <div class="contact-item">
@@ -430,7 +478,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Telepon</h4>
+                            <h4 data-key="contact-phone">Telepon</h4>
                             <p>083128392411</p>
                         </div>
                     </div>
@@ -440,7 +488,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Email</h4>
+                            <h4 data-key="contact-email">Email</h4>
                             <p>erlanggasatriacakrabirawa@gmail.com</p>
                         </div>
                     </div>
@@ -450,54 +498,66 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Lokasi</h4>
+                            <h4 data-key="contact-location">Lokasi</h4>
                             <p>Malang, Jawa Timur</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="contact-form">
-                    <h3>Kirim Pesan</h3>
-                    <p class="form-description">Silakan isi form di bawah ini
+                    <h3 data-key="form-title">Kirim Pesan</h3>
+                    <p class="form-description" data-key="form-description">
+                        Silakan isi form di bawah ini
                         untuk menghubungi saya. Saya akan merespon pesan Anda
                         sesegera mungkin.</p>
 
                     <form>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Nama Lengkap *</label>
+                                <label for="name" data-key="form-name">Nama
+                                    Lengkap *</label>
                                 <input type="text" id="name" name="name"
+                                    data-key-placeholder="form-name-placeholder"
                                     placeholder="Masukkan nama lengkap Anda"
                                     required>
                             </div>
 
                             <div class="form-group">
-                                <label for="email">Email *</label>
+                                <label for="email" data-key="form-email">Email
+                                    *</label>
                                 <input type="email" id="email" name="email"
+                                    data-key-placeholder="form-email-placeholder"
                                     placeholder="contoh@email.com" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Nomor HP (Opsional)</label>
+                            <label for="phone" data-key="form-phone">Nomor HP
+                                (Opsional)</label>
                             <input type="tel" id="phone" name="phone"
+                                data-key-placeholder="form-phone-placeholder"
                                 placeholder="08xxxxxxxxxx atau +62xxxxxxxxxx">
-                            <p class="form-help">Nomor HP membantu saya
+                            <p class="form-help" data-key="form-phone-help">
+                                Nomor HP membantu saya
                                 menghubungi Anda lebih cepat</p>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Pesan *</label>
+                            <label for="message" data-key="form-message">Pesan
+                                *</label>
                             <textarea id="message" name="message"
+                                data-key-placeholder="form-message-placeholder"
                                 placeholder="Tulis pesan Anda di sini... (minimal 10 karakter)"
                                 required minlength="10"></textarea>
-                            <p class="form-help">Jelaskan keperluan atau project
+                            <p class="form-help" data-key="form-message-help">
+                                Jelaskan keperluan atau project
                                 yang ingin didiskusikan</p>
                         </div>
 
                         <button type="submit" class="contact-submit">
                             <i class="fas fa-paper-plane"></i>
-                            <span class="submit-text">Kirim Pesan</span>
+                            <span class="submit-text"
+                                data-key="form-submit">Kirim Pesan</span>
                         </button>
                     </form>
                 </div>
@@ -513,11 +573,11 @@
                     <span>Erlangga Portfolio</span>
                 </div>
                 <div class="footer-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#home" data-key="nav-home">Home</a>
+                    <a href="#about" data-key="nav-about">About</a>
+                    <a href="#skills" data-key="nav-skills">Skills</a>
+                    <a href="#projects" data-key="nav-projects">Projects</a>
+                    <a href="#contact" data-key="nav-contact">Contact</a>
                 </div>
                 <div class="footer-social">
                     <a href="https://github.com/Erlanggadn" target="_blank"
@@ -535,7 +595,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Erlangga Satria Cakrabirawa. All rights reserved.
+                <p data-key="footer-copyright">&copy; 2025 Erlangga Satria
+                    Cakrabirawa. All rights reserved.
                 </p>
             </div>
         </div>
@@ -546,6 +607,7 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <script src="js/language.js"></script>
     <script src="js/script.js"></script>
 </body>
 
