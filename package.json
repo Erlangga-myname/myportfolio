@@ -1,0 +1,49 @@
+{
+    "name": "erlangga-portfolio",
+    "version": "1.0.0",
+    "description": "Modern portfolio website for Erlangga Satria Cakrabirawa - Flutter Mobile Developer",
+    "main": "index.html",
+    "scripts": {
+        "start": "npx live-server --port=3000 --open=/index.html",
+        "dev": "npx live-server --port=3000 --open=/index.html --watch=css,js",
+        "build": "echo 'Building for production...' && npm run minify:css && npm run minify:js",
+        "minify:css": "npx clean-css-cli css/style.css -o css/style.min.css",
+        "minify:js": "npx terser js/script.js -o js/script.min.js",
+        "serve": "npx http-server -p 8080 -c-1",
+        "lint:css": "npx stylelint css/style.css",
+        "lint:js": "npx eslint js/script.js",
+        "validate:html": "npx html-validate index.html"
+    },
+    "keywords": [
+        "portfolio",
+        "flutter",
+        "mobile-developer",
+        "dart",
+        "firebase",
+        "ui-ux",
+        "responsive",
+        "modern",
+        "animation",
+        "student",
+        "smk"
+    ],
+    "author": "Erlangga Satria Cakrabirawa",
+    "license": "MIT",
+    "devDependencies": {
+        "clean-css-cli": "^5.6.2",
+        "eslint": "^8.50.0",
+        "html-validate": "^8.5.0",
+        "http-server": "^14.1.1",
+        "live-server": "^1.2.2",
+        "stylelint": "^15.10.3",
+        "terser": "^5.20.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Erlangga-myname/portfolio.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Erlangga-myname/portfolio/issues"
+    },
+    "homepage": "https://erlangga-myname.github.io/portfolio"
+}
