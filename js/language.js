@@ -1,6 +1,9 @@
 // Multi-Language Support System
 const languages = {
     id: {
+        // Welcome Screen
+        'welcome-title': 'Welcome',
+
         // Navigation
         'nav-home': 'Home',
         'nav-about': 'Tentang',
@@ -90,6 +93,9 @@ const languages = {
     },
 
     en: {
+        // Welcome Screen
+        'welcome-title': 'Welcome',
+
         // Navigation
         'nav-home': 'Home',
         'nav-about': 'About',

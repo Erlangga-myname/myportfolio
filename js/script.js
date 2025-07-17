@@ -6,12 +6,14 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 const loadingOverlay = document.querySelector('.loading-overlay');
+const welcomeScreen = document.querySelector('.welcome-screen');
 
 // Global variables
 let lastScrollTop = 0;
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
+    initializeWelcomeScreen();
     initializeLoading();
     initializeNavbar();
     initializeScrollAnimations();
@@ -19,6 +21,52 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeContactForm();
     initializeBackToTop();
 });
+
+// Welcome Screen Animation
+function initializeWelcomeScreen() {
+    // Check if user has visited before (in this session)
+    const hasVisited = sessionStorage.getItem('hasVisited');
+
+    if (!hasVisited && welcomeScreen) {
+        // Show welcome screen for first-time visitors
+        document.body.style.overflow = 'hidden';
+        welcomeScreen.style.display = 'flex';
+
+        // Auto-hide welcome screen after animation completes
+        setTimeout(() => {
+            hideWelcomeScreen();
+        }, 5000); // 5 seconds total duration
+
+        // Mark as visited for this session
+        sessionStorage.setItem('hasVisited', 'true');
+    } else if (welcomeScreen) {
+        // Hide welcome screen immediately for returning visitors
+        welcomeScreen.style.display = 'none';
+    }
+
+    // Add click listener to hide welcome screen early
+    if (welcomeScreen) {
+        welcomeScreen.addEventListener('click', hideWelcomeScreen);
+    }
+}
+
+function hideWelcomeScreen() {
+    if (welcomeScreen) {
+        welcomeScreen.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+
+        // Remove from DOM after transition
+        setTimeout(() => {
+            welcomeScreen.style.display = 'none';
+        }, 1000);
+    }
+}
+
+// Function to reset welcome screen (for testing)
+function resetWelcomeScreen() {
+    sessionStorage.removeItem('hasVisited');
+    location.reload();
+}
 
 // Loading animation
 function initializeLoading() {
